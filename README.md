@@ -1,10 +1,4 @@
-# sass-base-school-2022
-
-
-## Clone to update base system
-`git clone https://github.com/berneson/sass-base-school-2022.git .`
-## Use as new project
-`git clone https://github.com/berneson/sass-base-school-2022.git . && rm -rf .git`
+# project 6
 
 ## Develop
-`sass --watch src/scss/style.scss style.css`# project-6
+`sass --watch src/scss/style.scss style.css`
