@@ -1,0 +1,194 @@
+@use '../../scss/components/buttons';
+@use '../../scss/components/icons';
+@use '../../scss/utilities/responsive';
+
+.opening {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    padding-bottom: var(--section-gap);
+    
+    &__inner {
+        grid-column: inner;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: var(--gap-m);
+        padding-bottom: var(--gap-l);
+
+        @include responsive.max(53rem) {
+            padding-top: var(--gap-xs);
+        }
+    }
+    
+    &__button {
+
+        a {
+            margin-left: 20px;
+
+            @include buttons.default-4();
+    
+            @include responsive.max(53rem) {
+                font-size: var(--font-size-3);
+            }
+
+            @include responsive.max(43rem) {
+                font-size: var(--font-size-2);
+            }
+            @include responsive.max(34rem) {
+                display: none;
+            }
+        }
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-s);
+
+        h3 {
+            font-size: clamp(2.5rem, 2.0357rem + 1.9048vw, 3.75rem);
+            line-height: 0;
+        }
+
+        h4 {
+            color: var(--color-accent-200);
+            font-size: clamp(1.25rem, 0.9714rem + 1.1429vw, 2rem);
+            opacity: 80%;
+            margin-bottom: 20px;
+        }
+    }
+
+    // CARDS
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap-l);
+        margin-top: -30px;
+        
+        @include responsive.max(78rem) {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+            grid-gap: 20px;
+        }
+    }
+    
+    &__card {
+        max-height: 600px;
+        width: 100%;
+        padding: 1rem 2rem;
+        
+        h3 {
+            font-size: var(--font-size-6);
+            
+            padding-left: 2rem;     // Denna är fel. Vill ha den i linje med veckodagarna
+            color: var(--color-light);
+
+            @include responsive.max(33rem) {
+                font-size: var(--font-size-5);
+                display: flex;
+                justify-content: center;
+                padding-left: 0;
+            }
+        }
+        
+        li {
+            font-family: var(--font-sans);
+            color: var(--color-light);
+            font-size: clamp(0.875rem, 0.7357rem + 0.5714vw, 1.25rem);
+            font-weight: 600;
+            line-height: 2.5;
+        }
+        
+        p {
+            font-size: 10px;
+            color: var(--color-light);
+            margin-top: 1.5rem;
+        }
+        
+        span {
+            font-weight: 100;
+        }
+    }
+    
+    &__days {
+        display: flex;
+        justify-content: space-around;
+        text-align: start;
+    }
+    
+    &__card-1 {
+        margin-top: -2rem;
+        background-color: var(--color-dark-200);
+
+        .opening__days:nth-of-type(5) {
+            color: var(--color-accent); 
+        }
+        
+        @include icons.triangle-3()
+    }
+    
+    &__card-2 {
+        margin-top: -2rem;
+        .opening__days:nth-of-type(5) {
+            color: var(--color-accent-200); 
+        }
+        
+        h3 {
+            font-size: var(--font-size-6);
+            color: var(--color-dark);
+
+            @include responsive.max(33rem) {
+                font-size: var(--font-size-5);
+                display: flex;
+                justify-content: center;
+                padding-left: 0;
+            }
+        }
+        
+        li {
+            font-family: var(--font-sans);
+            color: var(--color-dark);
+            font-weight: 600;
+            line-height: 2.5;
+        }
+    }
+    
+    &__card-3 {
+        margin-top: -2rem;
+        
+        .opening__days:nth-of-type(5) {
+            color: var(--color-accent-200); 
+        }
+        
+        h3 {
+            font-size: var(--font-size-6);
+            color: var(--color-dark);
+
+            @include responsive.max(33rem) {
+                font-size: var(--font-size-5);
+                display: flex;
+                justify-content: center;
+                padding-left: 0;
+            }
+        }
+        
+        li {
+            font-family: var(--font-sans);
+            color: var(--color-dark);
+            font-weight: 600;
+            line-height: 2.5;
+        }
+    }
+    
+    &__days--bg {
+        background-color: rgba(255, 255, 255, 0.047);
+    }
+
+    &__days--bg-2 {
+        background-color:#3f4a530b;
+    }
+}
