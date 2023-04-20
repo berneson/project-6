@@ -1,0 +1,165 @@
+@use '../../scss/components/icons';
+@use '../../scss/utilities/responsive';
+
+.about {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--gap-l) 0 var(--gap-l) 0;
+        gap: 4rem;
+    
+       @include responsive.max(78rem) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+        grid-gap: 20px;
+        }
+
+       @include responsive.max(70rem) {
+        display: inline-block;
+        justify-content: space-between;
+        }
+    }
+
+    &__button {
+        position: absolute;
+        z-index: 2;
+        right: 11px;
+        bottom: 13px;
+        background-color: transparent;
+    }
+
+    &__card {
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;      // Tabort?
+        width: 100%;
+        border: 2px solid transparent;
+
+        h2,
+        h5,
+        h6 {
+            margin-left: var(--gap-m);
+            margin-bottom: -30px;
+        }
+        
+        h2 {
+            
+            @include responsive.max(31rem) {
+                font-size: var(--font-size-6);
+            }
+        }
+
+        h5 {
+            line-height: 0.5;
+            margin-bottom: -40px;
+            
+            @include responsive.max(31rem) {
+                font-size: var(--font-size-2);
+                padding-top: 1rem;
+                padding-bottom: 10px;
+            }
+        }
+
+        h6 {
+            color: var(--color-dark-500);
+            &::before {
+                content: '*';
+            }
+
+            @include responsive.max(59rem) {
+                font-size: 14px;
+                padding-top: 0.5rem;
+            }
+        }
+        
+        &--1 {
+            background-color: var(--color-dark-200);
+            
+            h2 {
+                color: var(--color-light);
+                &::after {
+                    content: '*';
+                }
+            }
+
+            h5 {
+                color: var(--color-light);
+                opacity: 0.8;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid var(--color-dark-350);
+                transition: all 0.2s;
+
+                h2,
+                h5 {
+                    color: var(--color-dark-200);
+                }
+            }
+            
+            @include icons.triangle() 
+        }
+
+        &--2 {
+            background-color: rgba($color: #3F4A53, $alpha: 0.1);
+            margin-top: 20px;
+
+            h2 {
+                color: var(--color-accent);
+            }
+            h5 {
+                color: var(--color-dark-200);
+            }
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid var(--color-dark-300);
+                transition: all 0.2s;
+
+                h2 {
+                    color: var(--color-accent);
+                }
+                h5 {
+                    color: var(--color-dark-200);
+                }
+            }
+
+            @include icons.triangle-2()
+        }
+
+        &--3 {
+            background-color: rgba($color: #3F4A53, $alpha: 0.1);
+            margin-top: 20px;
+
+            h2 {
+                color: var(--color-dark-200);
+            }
+            h5 {
+                color: var(--color-dark-200);
+                opacity: 0.6;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid var(--color-dark-300);
+                transition: all 0.2s;
+
+                h2 {
+                    color: var(--color-dark-200);
+                }
+                h5 {
+                    color: var(--color-dark-200);
+                }
+            }
+
+            @include icons.triangle-2()
+        }
+    }  
+}
