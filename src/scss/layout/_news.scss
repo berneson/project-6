@@ -1,0 +1,109 @@
+@use '../../scss/components/buttons';
+@use '../../scss/utilities/responsive';
+
+.news {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        width: 100%;
+
+        h3 {
+            font-size: clamp(2.5rem, 2.0357rem + 1.9048vw, 3.75rem);
+            line-height: 0;
+
+            @include responsive.max(25rem) {
+                margin-top: 20px;
+            }
+        }
+    }
+    
+    &__gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--gap-s);
+
+        @include responsive.max(78rem) {
+            display: block;
+        }
+    }
+
+    &__date {
+        line-height: 0;
+        margin-top: 3rem;
+        
+        @include responsive.max(75rem) {
+            margin-top: 5rem;
+        }
+    }
+
+    &__title {
+        margin-top: -10px;
+    }
+
+    &__article {
+        
+        h2 {
+            font-size: clamp(2.25rem, 1.6929rem + 2.2857vw, 3.75rem);
+        }
+    }
+
+    &__article-big {
+        grid-row: span 2;
+        grid-column: span 2;
+        max-width: 1000px;
+        width: 100%;
+
+        p {
+            padding-top: var(--gap-xs);
+            max-width: 900px;
+        }
+    }
+    
+    &__article-small {
+        grid-column: 3;
+        width: 100%;
+
+        h3{
+            font-size: clamp(1.875rem, 1.6429rem + 0.9524vw, 2.5rem);
+            max-width: 400px;
+            line-height: 1.3;
+
+            @include responsive.max(25rem) {
+                line-height: 1;
+            }
+        }
+
+        p {
+            padding-top: var(--gap-xs);
+        }
+    }
+ 
+    &__buttons {
+    padding-top: var(--gap-xs);
+    padding-bottom: var(--gap-s);
+
+        @include responsive.max(75rem) {
+            margin-bottom: -1.5rem;
+        }
+        @include responsive.max(31rem) {
+            margin-bottom: -2rem;
+        }
+    }
+
+    &__button--readmore {
+        
+        @include buttons.default-3()
+    }
+
+    &__button--share {
+        color: var(--color-dark);
+        padding-left: var(--gap-xs);
+        font-size: var(--font-size-3);
+
+        &:hover {
+            transition: all 0.3s;
+        }
+    }
+}
