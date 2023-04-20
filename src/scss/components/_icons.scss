@@ -1,0 +1,94 @@
+@mixin triangle(
+    $background: var(--color-accent-200), 
+    $color: var(--color-light), 
+    $hover-background: var(--color-accent-300),
+    $hover-color: var(--color-light))
+    {
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 130px;
+            height: 130px;
+            background: $background;
+            position: absolute;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+            right: -40px;
+            bottom: 0;
+            transition: $background 0.5s;
+        }
+
+        &:hover {
+            &::after {
+                $background: $hover-background;
+            }
+        }
+    }
+
+
+@mixin triangle-2 (
+
+    $background: var(--color-dark-800), 
+    $color: var(--color-light), 
+    $hover-background: var(--color-accent-300),
+    $hover-color: var(--color-light))
+
+    {
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 130px;
+            height: 130px;
+            background: $background;
+            position: absolute;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+            right: -40px;
+            bottom: 0;
+            transition: $background 0.5s;
+        }
+
+        &:hover {
+            &::after {
+                $background: $hover-background;
+            }
+        }
+    }
+
+@mixin triangle-3 (
+
+    $background: var(--color-light-200), 
+    $color: var(--color-light), 
+    $hover-background: var(--color-accent-300),
+    $hover-color: var(--color-light))
+
+    {
+        position: relative;
+        overflow: hidden;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 130px;
+            height: 130px;
+            background: $background;
+            position: absolute;
+            transform: rotate(45deg);
+            transform-origin: bottom left;
+            right: -40px;
+            top: -130px;
+            transition: $background 0.5s;
+        }
+
+        &:hover {
+            &::after {
+                $background: $hover-background;
+            }
+        }
+    }
