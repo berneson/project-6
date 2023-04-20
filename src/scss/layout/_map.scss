@@ -1,0 +1,13 @@
+@use '../../scss/utilities/responsive';
+
+.map {
+    width: 100%;
+    height: 500px;
+    background: url(assets/images/map@2x.jpg) no-repeat;
+    background-size: cover;
+
+    @include responsive.max(64rem) {
+        height: 200px;
+        margin-top: -3rem;
+    }
+}
