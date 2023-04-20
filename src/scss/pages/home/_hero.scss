@@ -1,3 +1,112 @@
+@use "../../components/buttons";
+@use '../../utilities/responsive';
+
 .hero {
-    background-color: black;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    background: url(assets/images/hero-bg@2x.jpg);
+    background-size: cover;
+    min-height: 100vh;
+    background-size: cover;
+    
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    &__main {
+        padding-top: 132px;
+    }
+    
+    &__content {
+        max-width: 80rem;
+        width: 100%;
+        color: var(--color-light);
+        margin-top: -5rem;
+
+        @include responsive.max(28rem) {
+            margin-top: -6rem;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: var(--gap-xs); 
+    }
+    
+    &__button {
+        color: var(--color-light);
+        margin-top: -2rem;
+        
+        &--book {
+            @include buttons.default();
+            
+            @include responsive.max(53rem) {
+                font-size: var(--font-size-3);
+                margin-top: 0;
+            }
+            
+            @include responsive.max(28rem) {
+                font-size: var(--font-size-2);
+            }
+            
+        }
+        
+        &--member {
+            @include buttons.default-2();
+            
+            @include responsive.max(53rem) {
+                font-size: var(--font-size-3);
+                margin-top: 0;
+            }
+            
+            @include responsive.max(28rem) {
+                font-size: var(--font-size-2);
+            }
+        }
+    }
+  
+    &__readmore {
+        max-width: 200px;
+        width: 100%;
+        display: flex;
+        position: absolute;
+        bottom: 2rem; 
+        left: 0;
+        gap: var(--gap-xs);
+
+        h5 {
+            color: var(--color-light);
+        }
+        
+        &--button {
+            font-style: normal;
+            &:hover {
+                color: var(--color-accent-300);
+                transition: all 0.3s;
+            }
+        }
+    }
+    
+    &__socials {
+        max-width: 200px;
+        width: 100%;
+        display: flex;
+        position: absolute;
+        justify-content: end;
+        bottom: 2rem;
+        right: 0;
+        gap: var(--gap-xs);
+    } 
+    
+    &__social-f, 
+    &__social-i {
+        
+        &:hover {
+            opacity: 0.3;
+            transition: all 0.3s;
+        }
+    }
 }
