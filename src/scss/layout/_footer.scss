@@ -1,0 +1,134 @@
+@use '../../scss/utilities/responsive';
+
+
+.footer {
+
+    background-color: var(--color-dark);
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+
+    &__inner {
+        grid-column: inner;
+        width: 100%;
+    }
+    
+    &__brandning {
+        display: block;
+        margin-top: 5rem;   
+        margin-bottom: 2rem;   
+
+        @include responsive.max(28rem) {
+            display: flex;
+            justify-content: center;
+            margin-bottom: -2rem;
+        }
+    }
+    
+    &__section {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 50px;
+        
+        @include responsive.max(54rem) {
+            flex-wrap: wrap;
+            // justify-content: center;
+        }
+        @include responsive.max(28rem) {
+            display: grid;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    &__content {
+
+        @include responsive.max(54rem) {
+            padding-top: 5rem;
+        }  
+        
+        p {
+            color: var(--color-light);
+            line-height: 1; 
+            font-size: clamp(0.75rem, 0.6571rem + 0.381vw, 1rem);
+        }
+    }
+    
+    &__links {
+        
+        li {
+            font-family: var(--font-sans);
+            font-style: normal; 
+            line-height: 3;
+            font-size: clamp(0.75rem, 0.6571rem + 0.381vw, 1rem);
+            
+            &:hover {
+                transition: all 0.4s;
+                color: var(--color-accent);
+            }
+            @include responsive.max(67rem) {
+                line-height: 2;
+            }
+            @include responsive.max(29rem) {
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    &__media {
+        display: flex;
+        justify-content: end;
+        gap: var(--gap-xs);
+
+        @include responsive.max(742px) {
+            display: flex;
+            justify-content: start;
+            margin-top: 1rem;
+        }
+    }
+
+    &__socials {
+        @include responsive.max(28rem) {
+            display: flex;
+            gap: 3rem;
+        } 
+    }
+    
+    &__social {
+        margin-bottom: 5rem;
+
+        @include responsive.max(67rem) {
+            display: flex;
+            width: 200px;
+            margin-bottom: 1rem;
+        }
+        
+        img {
+            height: 65px;
+            width: 100%;
+        } 
+    }
+
+    &__social-f, 
+    &__social-i {
+
+        &:hover {
+            opacity: 0.3;
+            transition: all 0.3s;
+        }
+    }
+
+    &__bottom {
+
+        p {
+            color: var(--color-dark-500);
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+
+            font-size: clamp(0.75rem, 0.6571rem + 0.381vw, 1rem);
+        }
+    }
+}
+
