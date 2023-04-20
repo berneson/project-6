@@ -1,47 +1,38 @@
 :root {
 
-    --section-gap: 8rem;
+    --section-gap: 6rem;
     --section-gap-inner: calc( var(--section-gap) * 0.75 );
 
-    --gap-xl: 4rem;
-    --gap-l: 3rem;
-    --gap-m: 2rem;
-    --gap-s: 1rem;
+    --gap-xl: 6rem;
+    --gap-l: 5rem;
+    --gap-xm: 4rem;
+    --gap-m: 3rem;
+    --gap-s: 2rem;
+    --gap-xs: 1rem;
 
-    --border-radius: 10px;
-
-    --color-dark: #222;
-    --color-dark-200: #444;
-    --color-dark-300: #666;
+    --color-dark: #2B3135;
+    --color-dark-200: #3F4A53; 
+    --color-dark-300: #435665; 
+    --color-dark-350: #51616d; 
     --color-dark-500: #888;
     --color-dark-600: #999;
     --color-dark-700: #b5b5b5;
     --color-dark-800: #d5d5d5;
-    --color-dark-900: #f1f1f1;
+    --color-dark-900: #f1f1f1e2;
 
-    --color-accent: #8a6086;
-    --color-accent-200: #8a6086;
-    --color-accent-300: #8a6086;
-    --color-accent-400: #8a6086;
-    --color-accent-500: #8a6086;
-    --color-accent-600: #8a6086;
-    --color-accent-700: #8a6086;
-    --color-accent-800: #8a6086;
-    --color-accent-900: #8a6086;
+    --color-accent: #FD3E1D;
+    --color-accent-200: #0584FF;
+    // Hover-färger:
+    --color-accent-300: hsl(9, 98%, 61%);
+    --color-accent-400: hsl(210, 100%, 61%);
 
-    --color-light: #f5f3eb;
-    --color-light-200: #f5f3eb;
-    --color-light-300: #f5f3eb;
-    --color-light-400: #f5f3eb;
-    --color-light-500: #f5f3eb;
-    --color-light-600: #f5f3eb;
-    --color-light-700: #f5f3eb;
-    --color-light-800: #f5f3eb;
-    --color-light-900: #f5f3eb;
+    --color-light: #fff;
+    --color-light-100: rgb(229, 229, 229);
+    --color-light-200: #ffffff1a;
+    --color-light-300: #2b31356a;
     
-
-    --font-sans: 'Arial', sans-serif;
-    --font-serif: 'Georiga', serif;
+    --font-sans-title: 'Abolition', sans-serif; // + knappar
+    --font-sans: 'Industry', sans-serif;
 
     --line-height: 1.5;
 
@@ -55,7 +46,7 @@
     --font-size-5: calc( var(--font-size-4) * var(--font-scale) );
     --font-size-6: calc( var(--font-size-5) * var(--font-scale) );
 
-    --page-inner: 90rem; // 1440px
-    --grid-container: minmax(2rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(2rem, 1fr);
+    --page-inner: 100rem; 
+    --grid-container: [full-start] minmax(2rem, 1fr) [inner-start] minmax(0, var(--page-inner)) [inner-end] minmax(2rem, 1fr) [full-end];
 
 }
