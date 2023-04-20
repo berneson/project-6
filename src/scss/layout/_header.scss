@@ -1,0 +1,26 @@
+.header {
+    position: fixed;
+    height: 175px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    z-index: 999; background-color: transparent;
+    transition: background-color 0.8s ease-in-out;
+    
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        
+        svg {
+            height: 120px;
+            width: 100%;
+            margin-top: 32px;
+        }
+    }  
+}
+
