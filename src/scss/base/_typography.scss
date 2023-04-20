@@ -1,45 +1,65 @@
 body {
     font-family: var(--font-sans);
+    font-size: var(--font-size-1); // Brödtext
+    // https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth  Gör texten mer krispig på mac
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 2px;  // Skapar ett mellanrum på bokstäverna
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    color: var(--color-dark-200);
+    font-family: var(--font-sans-title);
+    font-style: oblique;
+    font-weight: 400;
 }
 
-
 h1 {
-    
+    line-height: 1.1;
+    padding-bottom: 0;
+    color: var(--color-light);
+    font-size: clamp(2.8125rem, 1.5357rem + 5.2381vw, 6.25rem);
 }
 
 h2 {
-
+    font-size: 60px;
 }
 
 h3 {
-
+    font-size: var(--font-size-4);
 }
 
 h4 {
-
+    font-size: var(--font-size-3);
 }
 
 h5 {
-
+    font-size: var(--font-size-3);
 }
 
 h6 {
-
+    font-size: clamp(0.75rem, 0.6571rem + 0.381vw, 1rem);
+    font-family: var(--font-sans);
+    font-style: normal;
 }
 
 p {
     line-height: var(--line-height);
+    color: var(--color-dark-200);
 }
 
 a {
-    color: var(--color-dark);
+    color: var(--color-light);
     text-decoration: none;
-    line-height: var(--line-height);
-
+    font-style: oblique;
+    font-family: var(--font-sans-title);
+    font-size: var(--font-size-3);
+    
     &:hover {
         color: var(--color-accent);
     }
@@ -47,4 +67,16 @@ a {
 
 li {
     line-height: var(--line-height);
+    font-size: var(--font-size-2);
+    font-family: var(--font-sans-title);
+    list-style: none;
+}
+
+ul {
+    
+}
+
+figure {
+    margin: 0;
+    padding: 0;
 }
