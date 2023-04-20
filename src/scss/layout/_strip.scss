@@ -1,0 +1,59 @@
+@use '../../scss/components/icons';
+@use '../../scss/utilities/responsive';
+
+.strip {
+    display: grid;
+    grid-template-columns: var(--grid-container);
+    padding-top: var(--gap-m);
+    padding-bottom: var(--gap-s);
+
+    &__inner {
+        grid-column: inner;
+        width: 100%;
+    }
+    
+    &__content {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include icons.triangle()
+    }
+    
+    &__text {
+        position: absolute;
+        padding-left: var(--gap-l);
+        padding-right: var(--gap-s);
+        
+        @include responsive.max(53rem) {
+            padding-top: var(--gap-m);
+            padding-left: var(--gap-m);
+            padding-bottom: var(--gap-m);
+            line-height: 1.2;
+            }
+        
+        h2 {
+            color: var(--color-light);
+            font-size: clamp(1.5625rem, 0.75rem + 3.3333vw, 3.75rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.125rem, 0.6143rem + 2.0952vw, 2.5rem);
+            color: var(--color-light);
+            margin-top: -2rem;
+
+            @include responsive.max(40rem) {
+                display: none;
+            }
+        }
+    }
+
+    &__button {
+        position: absolute;
+        z-index: 2;
+        right: 11px;
+        bottom: 13px;
+        background-color: transparent;
+    }
+}
