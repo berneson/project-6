@@ -1,0 +1,176 @@
+@use '../../scss/utilities/responsive';
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--gap-s);
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: var(--gap-s);
+
+        @include responsive.max(53rem) {
+            display: none;
+        }
+    }
+
+    &__link {
+        transition: all 0.2s;
+        &:hover {
+            
+            color: var(--color-light-100);
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 5px;
+            text-decoration-color: var(--color-accent);
+        }
+    }
+
+    
+
+    .menu-button {
+        height: 30px;
+        width: 30px;
+        position: relative; // Gör att ingenting hoppar utamför
+        
+        
+        //Stänger av alla orginalinställningar hos button
+        background: none;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        
+        &:focus, &--close {
+            &:hover {
+                .menu-button__hamburger {
+                    transition: transform 0.2s 0.2s;
+                    transform: rotate(45deg) translate(-50%, -50%);
+                    
+                    &:before {
+                        transition: top 0.2s, transform 0.2s 0.2s;
+                        transform: rotate(90deg);
+                        top: 0;
+                    }
+                    
+                    &:after{
+                        transition: width 0.2s;
+                        width: 0;
+                    }
+                }
+            }
+        }
+        
+        &__hamburger {
+            transform-origin: left top;
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            top: 50%;
+            left: 80%;
+            transition: transform 0.2s;
+            transform: translate(-50%, 50%) rotate(0);
+            background-color: var(--color-light);
+    
+            &:before, &:after {
+                content: '';
+                display: block; 
+                position: absolute;
+                top: -10px;
+                height: 1px;
+                width: 100%;
+                background-color: var(--color-light);
+            }
+    
+            
+            &:before {
+                transition: top 0.2s 0.2s, transform 0.2s;
+            }
+    
+            &:after {
+                top: 10px;
+                width: 100%;
+                transition: width 0.2s 0.2s;
+            }
+        }
+    }
+}
+
+.sidebar {
+    display: grid;
+    max-width: 300px;
+    width: 100%;
+    background-color: var(--color-dark);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.4s;
+
+    @include responsive.max(53rem) {
+        max-width: 100%;
+    }
+
+    a {
+        color: var(--color-light);
+
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    
+    
+    &--open {
+        display: grid;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+    
+    &__inner {
+        display: flex;
+        justify-content: center;
+    }
+    
+    &__link {
+        
+        @include responsive.max(53rem) {
+            font-size: var(--font-size-4);
+        }
+        
+
+        &:hover {
+            color: var(--color-light-100);    
+            transition: all 0.2s;
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-underline-offset: 5px;
+            text-decoration-color: var(--color-accent);
+            
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    &__item {
+        padding: var(--gap-xs);
+    }
+
+}
+
